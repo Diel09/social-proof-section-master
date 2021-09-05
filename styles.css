@@ -87,9 +87,8 @@ main {
   width: 40px;
   border-radius: 50%;
   grid-area: img;
-  align-self: end;
+  align-self: center;
   justify-self: center;
-  margin-top: 20%;
 }
 
 .info {
