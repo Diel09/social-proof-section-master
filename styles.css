@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --darkMagenta: hsl(300, 43%, 22%);
+  --softPink: hsl(333, 80%, 67%);
+  --grayMagenta: hsl(303, 10%, 53%);
+  --lightGrayMagenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Mobile version */
+body {
+  background-color: var(--white);
+  background-image: url(images/bg-pattern-top-mobile.svg),
+    url(images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-position: left top, right bottom;
+}
+
+main {
+  margin-top: 5%;
+  font-size: 15px;
+  text-align: center;
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.main-header {
+  margin-top: 15%;
+  color: var(--darkMagenta);
+  font-weight: 700;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.header-text {
+  color: var(--grayMagenta);
+  margin-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 5%;
+}
+
+.rating {
+  background-color: var(--lightGrayMagenta);
+  border-radius: 15px;
+  margin: 5%;
+  padding: 3%;
+}
+
+.rating img {
+  padding: 5px;
+}
+
+.rating h2 {
+  font-family: "Spartan", sans-serif;
+  color: var(--darkMagenta);
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.review {
+  background-color: var(--darkMagenta);
+  margin: 5%;
+  border-radius: 8px;
+  padding-top: 5%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 40% 60%;
+  grid-template-areas:
+    "img info space"
+    "message message message";
+}
+
+.review img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  grid-area: img;
+  align-self: end;
+  justify-self: center;
+  margin-top: 20%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  grid-area: info;
+}
+
+.reviewer {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 11px;
+}
+
+.reviewer-info {
+  font-family: "Spartan", sans-serif;
+  color: var(--softPink);
+  font-weight: 400;
+  font-size: 11px;
+}
+
+.comment {
+  text-align: left;
+  color: var(--white);
+  font-family: "Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 5%;
+  grid-area: message;
+  justify-self: end;
+  align-self: center;
+}
+
+/* end of mobile */
+
+/* Desktop */
+@media (min-width: 700px) {
+  body {
+    background-color: var(--white);
+    background-image: url(images/bg-pattern-top-desktop.svg),
+      url(images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+    background-position: left top, right bottom;
+  }
+
+  main {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "heading rating"
+      "review review"
+      "footer footer";
+    padding: 5% 10% 5% 10%;
+    grid-gap: 10px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    grid-area: heading;
+    text-align: left;
+  }
+
+  .main-header {
+    margin-top: 0;
+    padding: 0;
+    font-size: 50px;
+  }
+
+  .header-text {
+    margin-top: 3%;
+    padding: 0;
+  }
+
+  .star-reviews {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: rating;
+  }
+
+  .rating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 450px;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  #r2 {
+    align-self: center;
+  }
+
+  #r3 {
+    align-self: flex-end;
+  }
+
+  .rating h2 {
+    padding-left: 30px;
+  }
+
+  .reviews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    grid-area: review;
+    justify-content: space-between;
+  }
+
+  .review {
+    width: 32%;
+    margin: 0;
+    padding: 1px;
+  }
+  .review img {
+    margin-top: 0;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .info {
+    margin: 0;
+    padding: 0;
+  }
+
+  #rev2 {
+    align-self: center;
+  }
+
+  #rev3 {
+    align-self: flex-end;
+  }
+
+  .attribution {
+    grid-area: footer;
+  }
+}
